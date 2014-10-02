@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.017" errors="0" skipped="2" tests="4" name="edu.fdiazaguirre.bitmanipulation.BitManipulationTest">
+<testsuite failures="0" time="0.007" errors="0" skipped="0" tests="10" name="edu.fdiazaguirre.bitmanipulation.BitManipulationTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
@@ -25,7 +25,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/fdiazaguirre/Dev/tools/apache-maven-3.0.4/bin/m2.conf"/>
+    <property name="classworlds.conf" value="/Users/fdiazaguirre/Dev/tools/apache-maven-3.2.3/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/fdiazaguirre/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -39,7 +39,7 @@
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="user.name" value="fdiazaguirre"/>
-    <property name="java.class.path" value="/Users/fdiazaguirre/Dev/tools/apache-maven-3.0.4/boot/plexus-classworlds-2.4.jar"/>
+    <property name="java.class.path" value="/Users/fdiazaguirre/Dev/tools/apache-maven-3.2.3/boot/plexus-classworlds-2.5.1.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
@@ -52,7 +52,7 @@
     <property name="java.ext.dirs" value="/Users/fdiazaguirre/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/Users/fdiazaguirre/Dev/tools/apache-maven-3.0.4"/>
+    <property name="maven.home" value="/Users/fdiazaguirre/Dev/tools/apache-maven-3.2.3"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -61,12 +61,14 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.002" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testMask"/>
-  <testcase time="0.003" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testPrintNumber">
-    <skipped/>
-  </testcase>
-  <testcase time="0.003" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testUpdateBits">
-    <skipped/>
-  </testcase>
-  <testcase time="0.001" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="test"/>
+  <testcase time="0.001" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testRightShift"/>
+  <testcase time="0.001" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testShift"/>
+  <testcase time="0.001" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testMask"/>
+  <testcase time="0.003" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testPrintNumber"/>
+  <testcase time="0" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testPrintNumberThrowsException"/>
+  <testcase time="0" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testClearBitsIthrough0"/>
+  <testcase time="0" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="test"/>
+  <testcase time="0.001" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testinsertBinary"/>
+  <testcase time="0" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testSetBits"/>
+  <testcase time="0" classname="edu.fdiazaguirre.bitmanipulation.BitManipulationTest" name="testSetBit"/>
 </testsuite>
