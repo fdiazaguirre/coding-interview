@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: edu.fdiazaguirre.cracking.ArraysAndStringUtilsTest
--------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.011 sec
