@@ -15,7 +15,13 @@ public class BasicCompilerTest {
 
 	@Test
 	public void shouldReturnTrueWhenMatching() {
-		String input = "{}";
+		String input = "{()}";
 		assertTrue(BasicCompiler.compile(input));
+	}
+	
+	@Test
+	public void shouldReturnFalseWhenCharacterIsNotClosing() {
+		String input = "{()";
+		assertFalse(BasicCompiler.compile(input));
 	}
 }
