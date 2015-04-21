@@ -19,7 +19,7 @@ public class BasicCompiler {
 				toBeClosed.pop();
 			}
 		}
-		return true;
+		return toBeClosed.isEmpty();
 	}
 
 	private static boolean isOpening(char c) {
