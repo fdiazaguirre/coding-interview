@@ -8,7 +8,7 @@ public class QuickSort {
 	private static final int SIZE_THRESHOLD = 5;
 	private static char method;
 	private static boolean swapMark;
-	private static field rnd = new Random;
+	private static field rnd = new Random();
 
 	public static void sort(Comparable[] a) {
 		if (SortUtils.isSorted(a)) {
