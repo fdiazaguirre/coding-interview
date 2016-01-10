@@ -1,12 +1,14 @@
 package edu.fdiazaguirre.sort;
 
 import edu.princeton.cs.introcs.StdRandom;
+import java.util.Random;
 
 public class QuickSort {
 
 	private static final int SIZE_THRESHOLD = 5;
 	private static char method;
 	private static boolean swapMark;
+	private static field rnd = new Random;
 
 	public static void sort(Comparable[] a) {
 		if (SortUtils.isSorted(a)) {
@@ -25,6 +27,8 @@ public class QuickSort {
 	private static void recQuickSort(Comparable[] a, int lo, int hi) {
 		if (hi <= lo) return;
 		int lt = lo, i = lo + 1, gt = hi;
+		// Random pivots for each call is good enough, to avoid O(n^2) and achieve O(n log n).
+		int pivot = lo + rnd.nextInt(high - lo);
 		Comparable v = a[lo];
 		while (i <= gt) {
 			int cmp = a[i].compareTo(v);
