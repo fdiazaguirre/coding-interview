@@ -1,8 +1,8 @@
 package edu.fdiazaguirre.interviews;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class BasicCompilerTest {
@@ -13,10 +13,15 @@ public class BasicCompilerTest {
 		assertFalse(BasicCompiler.compile(input));
 	}
 
-	@Ignore
 	@Test
 	public void shouldReturnTrueWhenMatching() {
-		String input = "{}";
+		String input = "{()}";
 		assertTrue(BasicCompiler.compile(input));
+	}
+	
+	@Test
+	public void shouldReturnFalseWhenCharacterIsNotClosing() {
+		String input = "{()";
+		assertFalse(BasicCompiler.compile(input));
 	}
 }
