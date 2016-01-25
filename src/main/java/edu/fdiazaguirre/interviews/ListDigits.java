@@ -13,7 +13,7 @@ import com.google.common.math.IntMath;
  * Examples: n: 64, b:2 => (1,0,0,0,0,0,0) n: 64, b:10 => (6,4) n: 128, b:10 =>
  * (1,2,8) <----- n: 128, b:2 => (1,0,0,0,0,0,0,0)
  */
-public class ListDigits {
+public final class ListDigits {
 	private static List<Integer> result = new ArrayList<Integer>();
 	private static ListDigits instance = null;
 	

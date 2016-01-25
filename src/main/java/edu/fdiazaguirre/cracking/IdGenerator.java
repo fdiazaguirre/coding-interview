@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Singleton and threadSafe
  *
  */
-public class IdGenerator {
+public final class IdGenerator {
     private AtomicInteger id = new AtomicInteger();
     private int delta = 13;
     private static IdGenerator instance = null;
