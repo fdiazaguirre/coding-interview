@@ -28,7 +28,7 @@ public class QuickSort {
 		if (hi <= lo) return;
 		int lt = lo, i = lo + 1, gt = hi;
 		// Random pivots for each call is good enough, to avoid O(n^2) and achieve O(n log n).
-		int pivot = lo + rnd.nextInt(high - lo);
+		int pivot = lo + rnd.nextInt(hi - lo);
 		Comparable v = a[lo];
 		while (i <= gt) {
 			int cmp = a[i].compareTo(v);

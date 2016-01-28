@@ -1,4 +1,4 @@
-package edu.fdiazzaguirre.multithreading;
+package edu.fdiazaguirre.multithreading;
 
 import static org.junit.Assert.*;
 
