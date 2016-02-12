@@ -140,4 +140,21 @@ public class BitManipulationTest {
 		assertEquals(Integer.toBinaryString(Double.valueOf(d).intValue()),
 				BitManipulation.printNumber(d));
 	}
+	
+	@Test
+	public void testSwapValuesUsingXOR() {
+		int a = 2, b = 6;
+		System.out.println("Before");
+		System.out.println(Integer.toBinaryString(a));
+		System.out.println(Integer.toBinaryString(b));
+		System.out.println("---Get the delta---");
+		a = a ^ b;
+		System.out.println(Integer.toBinaryString(a));
+		System.out.println("--------");
+		b = b ^ a; // same as a ^ b since -> ^ is exclusive!
+		a = b ^ a; // same as a ^ b
+		System.out.println("Swapped");
+		System.out.println(Integer.toBinaryString(a));
+		System.out.println(Integer.toBinaryString(b));
+	}
 }
