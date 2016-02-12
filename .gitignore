@@ -1,4 +1,4 @@
-**/target/**/*.*
+practice/target/**/*.*
 **/.classpath
 **/.project
 **/*.class
