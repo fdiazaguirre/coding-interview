@@ -1,0 +1,12 @@
+<div class="main-container" ng-controller="BlockCtrl">
+    <div class="input-container">
+        <textarea ng-model="input" ng-list="/\n/" ng-trim="false" class="readingTextArea"
+                  placeholder="Insert the line by line the moves, the 1st line should have the number of blocks"></textarea>
+    </div>
+    <div class="output-container">
+        <textarea ng-model="output" class="writingTextArea" readonly>{{output}}</textarea>
+    </div>
+    <div class="button-container">
+        <button ng-click="parse(input)">Submit</button>
+    </div>
+</div>
