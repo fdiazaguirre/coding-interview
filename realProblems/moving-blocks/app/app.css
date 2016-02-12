@@ -1,0 +1,47 @@
+.panel {
+  height: 200px;
+  width: 35%;
+}
+
+.main-container {
+  width: 75%;
+  background-color: #007069;
+}
+
+.input-container {
+  height: 225px;
+  display: inline-block;
+  width: 40%;
+  margin: 1%;
+  padding: 3%;
+  background-color: #f5f5dc;
+}
+
+.output-container {
+  height: 225px;
+  display: inline-block;
+  width: 40%;
+  margin: 1%;
+  padding: 3%;
+  background-color: #d3d3d3;
+}
+
+.button-container {
+  background-color: #f08080;
+}
+
+.readingTextArea {
+  height: 100%;
+  width: 250px;
+}
+
+.writingTextArea {
+  height: 100%;
+  width: 250px;
+}
+
+.title {
+  display: block;
+  padding-top: 5%;
+  padding-left: 20%;
+}
