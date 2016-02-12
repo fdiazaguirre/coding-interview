@@ -1,7 +1,9 @@
 coding-interview
 ================
 
-#practice:
- Algorithms &amp; data structures implementations, bit manipulation, recursion, multi-threading, etc.
-#realProblems:
- Problems that I faced during interviews.
+#java:
+ -Algorithms &amp; data structures implementations, bit manipulation, recursion, multi-threading, etc.
+ -Interview questions.
+#js:
+ -moving-blocks: Problem that I faced during interviews.
+ -cs-web: computer science concepts.
