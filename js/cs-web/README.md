@@ -1,0 +1,1 @@
+This code was tested on spidermonkey console and with gjtest in v8.

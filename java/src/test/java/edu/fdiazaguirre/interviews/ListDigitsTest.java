@@ -70,6 +70,6 @@ public class ListDigitsTest {
 		int base = 10;
 		int expected = IntMath.log10(number, RoundingMode.DOWN) / IntMath.log10(base, RoundingMode.DOWN);
 		
-		assertEquals(expected, ListDigits.getInstance().getExponent(number, base));
+		assertEquals(expected, ListDigits.getInstance().getExponent(number, base));		
 	}
 }

@@ -4,23 +4,30 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Solution {
+public class Adjacents {
 
-	public static int solution(int[] A) {
+	/**
+	 * Returns the max index of non-equals numbers in a sequence.
+	 * @param A array with the sequence.
+	 * @return -1 when all elements are equals and for arrays with less than 3 elements.
+	 */
+	public static int findIndex(int[] A) {
 		int nonAdjacents = -1;
 		List<Integer> partialResults = new ArrayList<Integer>();
 		partialResults.add(nonAdjacents);
 		// consider array smaller than 3
-		int p , q;
-		for (int i = 0; i < A.length; i++) {
-			p = i;
-			q = p + 2;
-			if (p == A.length -1 || q == A.length -1) { break;}
-			while (A[p] != A[q] && !containsValueBetween(A, p, q)) {
-				if (q == A.length -1) { break;}
+		if (A.length < 3) {return -1;}
+		
+		// Use two pointers
+		int p = 0, q = 2;
+		// O(n^2)
+		while (q < A.length -1) {
+			while (q < A.length - 1 && A[p] != A[q] && !containsValueBetween(A, p, q)) {
 				q++;
 				partialResults.add(Math.abs(p - q));
 			}
+			p++;
+			q = p + 2;
 		}
 		int[] result = convertToPrimitive(partialResults);
 		Arrays.sort(result); 
@@ -28,7 +35,14 @@ public class Solution {
 		return result[biggestIndex];
 	}
 
+	/**
+	 * Checks if there is at least one value between the pointers,
+	 * that is bigger than the value in the left pointer but smaller than the right pointer. 
+	 */
 	static boolean containsValueBetween(int[] a, int p, int q) {
+		// fail fast.
+		if (a.length == 0 || p >= q) {return false;}
+		
 		for (int index = p; index < q; index++) {
 			if ((a[p] < a[index]) && (a[index] < a[q])) {
 				return true;

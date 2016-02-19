@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components
 var blocksApp = angular.module('myApp', [
     'ngRoute',
-    'myApp.block'
+    'csWeb.block'
 ]);
 
 blocksApp.config(['$routeProvider', function ($routeProvider) {

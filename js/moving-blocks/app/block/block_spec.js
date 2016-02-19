@@ -1,5 +1,5 @@
 describe('BlockCtrl', function(){
-    beforeEach(module('myApp'));
+    beforeEach(module('csWeb'));
 
     var $controller, controller;
 
