@@ -1,10 +1,10 @@
 /**
  * Created by fdiazaguirre on 2/15/16.
  */
-function reportCardTest() {}
-registerTestSuite(reportCardTest);
+function reportCardTests() {}
+registerTestSuite(reportCardTests);
 
-addTest(reportCardTest, function ReturnsCorrectValues() {
+addTest(reportCardTests, function ReturnsCorrectValues() {
     // Given.
     var reportCard = csWeb.reportCard;
     var rc = reportCard({name: 'Fede'});

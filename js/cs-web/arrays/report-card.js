@@ -1,5 +1,7 @@
 /**
- * Created by fdiazaguirre on 2/15/16.
+ * isbn: 978-1-449-36493-9
+ * page: 33
+ * exercise: #1
  */
 (function () {
     'use strict';
