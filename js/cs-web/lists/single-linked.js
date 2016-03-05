@@ -37,27 +37,29 @@
         csWeb.SingleLinked = function (spec) {
             var that = {},
             // private members
-                head = new csWeb.Node(spec.value),
+                head = spec.head || new csWeb.Node(spec.value),
                 tail = head;
 
             // privileged
             that.find = function (value) {
                 var current = head;
-                while (value && current !== null && current.getValue() !== value) {
+                while (current !== null && value !== current.getValue() && current.getNext() !== null) {
                     current = current.getNext();
                 }
                 return current;
             },
 
             that.insertAfter = function (node, newNode) {
-                var prevNode, v = node.getValue(), oldRef;
-                prevNode = that.find(v);
-                oldRef = prevNode.getNext();
+                var oldRef = node.getNext();
+
+                if (oldRef !== null && oldRef.getNext() === null) {
+                    tail = oldRef;
+                }
                 if (oldRef === null) {
                     tail = newNode;
                 }
                 newNode.setNext(oldRef);
-                prevNode.setNext(newNode);
+                node.setNext(newNode);
             },
 
             that.append = function (value) {
@@ -108,6 +110,15 @@
 
             that.getTail = function () {
                 return tail;
+            },
+
+            that.advance = function (n) {
+                var current = head;
+                while (current !== null && n > 0) {
+                    --n;
+                    current = current.getNext();
+                }
+                return current;
             }
 
             return that;

@@ -46,7 +46,7 @@ addTest(doubleLinkedTests, function insertAfterTest() {
     expectEq(head, newNode.getPrev());
 });
 
-addTest(doubleLinkedTests, function removeNodeWithValue () {
+addTest(doubleLinkedTests, function removeNodeWithValueTest () {
     // Given.
     var cities = new csWeb.DoubleLinked({value: 'NYC'}), middleNode, head, newNode = new csWeb.Node('LAX');
 
@@ -61,4 +61,24 @@ addTest(doubleLinkedTests, function removeNodeWithValue () {
     expectEq(head, middleNode.getPrev());
     expectEq(middleNode, head.getNext());
     expectEq(null, middleNode.getNext());
+});
+
+addTest(doubleLinkedTests, function backTest() {
+    // Given.
+    var head = csWeb.Node('NYC'),
+        newNode = new csWeb.Node('LAX'),
+        cities,
+        actual;
+
+    // When
+    cities = new csWeb.DoubleLinked(head);
+    cities.insertAfter(head, newNode);
+    cities.append('SFO');
+    cities.append('MIA');
+
+    // Then.
+    actual = cities.back(0);
+    expectEq('MIA', actual.getValue());
+    actual = cities.back(3);
+    expectEq('NYC', actual.getValue());
 });

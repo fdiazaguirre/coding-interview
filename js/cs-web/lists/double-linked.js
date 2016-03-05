@@ -52,37 +52,44 @@
         // privileged
         that.find = function (value) {
             var current = head;
-            while (value && current !== null && current.getValue() !== value) {
+            while (current !== null && value !== current.getValue() && current.getNext() !== null) {
                 current = current.getNext();
             }
             return current;
         },
 
         that.insertAfter = function (node, newNode) {
-            var prevNode, v = node.getValue(), oldRef;
-            prevNode = that.find(v);
-            oldRef = prevNode.getNext();
+            var oldRef = node.getNext();
+
+            if (oldRef !== null && oldRef.getNext() === null) {
+                tail = oldRef;
+            }
             if (oldRef === null) {
                 tail = newNode;
             } else {
-                oldRef.setPrev(newNode);
+                oldRef.setPrev(newNode)
             }
             newNode.setNext(oldRef);
-            prevNode.setNext(newNode);
-            newNode.setPrev(prevNode);
+            newNode.setPrev(node);
+            node.setNext(newNode);
+
         },
 
         that.append = function (value) {
             var t = new csWeb.Node(value);
-            tail.setNext(t);
+            if (tail !== null) {
+                tail.setNext(t);
+            }
             t.setPrev(tail);
             tail = t;
         },
 
         that.remove = function (value) {
             var node = that.find(value), prev, next;
-            next = node.getNext();
-            prev = node.getPrev();
+            if (node && node !== null) {
+                next = node.getNext();
+                prev = node.getPrev();
+            }
             // Is the head being deleted?
             if (prev === null && node !== null && node.getValue() === value) {
                 head = next;
@@ -111,8 +118,26 @@
 
         that.getTail = function () {
             return tail;
+        },
+
+        that.advance = function (n) {
+            var current = head;
+            while (current !== null && n > 0) {
+                n--;
+                current = current.getNext();
+            }
+            return current;
+        },
+
+        that.back = function (n) {
+            var current = tail;
+            while (current !== null && n > 0) {
+                --n;
+                current = current.getPrev();
+            }
+            return current;
         }
 
-            return that;
-        }
+        return that;
+    }
 })();
