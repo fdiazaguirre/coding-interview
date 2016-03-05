@@ -18,17 +18,15 @@ public class Adjacents {
 		// consider array smaller than 3
 		if (A.length < 3) {return -1;}
 		
-		// Use two pointers
-		int p = 0, q = 2;
-		// O(n^2)
+		int q = 1;
+		
 		while (q < A.length -1) {
-			while (q < A.length - 1 && A[p] != A[q] && !containsValueBetween(A, p, q)) {
-				q++;
-				partialResults.add(Math.abs(p - q));
+			if (A[q-1] < A[q] && A[q] < A[q+1]) {
+				partialResults.add(q);
 			}
-			p++;
-			q = p + 2;
+			++q;
 		}
+		
 		int[] result = convertToPrimitive(partialResults);
 		Arrays.sort(result); 
 		int biggestIndex = result.length - 1;

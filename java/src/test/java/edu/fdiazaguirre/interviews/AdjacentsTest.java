@@ -37,24 +37,22 @@ public class AdjacentsTest {
 
 	@Test
 	public void testFindIndex() {
-		// Not clear why this is passing. 
 		int[] input = {1,4,7,3,3,5};
-		assertEquals(4, Adjacents.findIndex(input));
+		assertEquals(1, Adjacents.findIndex(input));
 		
 		int[] a = {0,1,2,3,3,7,7};
-		assertEquals(3, Adjacents.findIndex(a));
+		assertEquals(2, Adjacents.findIndex(a));
 		
-		// How should behave here?
 		int[] c = {1,5,10,15,20,25};
-		assertEquals(5, Adjacents.findIndex(c));
+		assertEquals(4, Adjacents.findIndex(c));
 		
 		int[] b = {0,0,1,1,3,4,5};
-		assertEquals(-1, Adjacents.findIndex(b));
+		assertEquals(5, Adjacents.findIndex(b));
 	}
 	
 	@Test
 	public void testNonAdjacents() {
-		int[] input = {0,1,2,3,4,5};
+		int[] input = {2,1,3,0,5,4};
 	
 		assertEquals(-1, Adjacents.findIndex(input));
 	}

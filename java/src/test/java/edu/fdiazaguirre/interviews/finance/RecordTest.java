@@ -2,7 +2,7 @@ package edu.fdiazaguirre.interviews.finance;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-
+import org.mockito.Mock;
 import java.util.Calendar;
 
 import org.junit.Test;
