@@ -10,3 +10,13 @@
         <button ng-click="parse(input)">Submit</button>
     </div>
 </div>
+
+<div class="main-container" ng-controller="ChatCtrl">
+    <div class="output-container">
+        <textarea ng-model="output" class="writingTextArea" readonly>{{output}}</textarea>
+    </div>
+    <div class="input-container">
+        <textarea ng-model="input" ng-list="/\n/" ng-trim="false" class="readingTextArea"></textarea>
+        <button ng-click="send(input)">Submit</button>
+    </div>
+</div>
