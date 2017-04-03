@@ -23,6 +23,11 @@ public class Equilibrium {
 		}
 	}
 
+	/**
+	 * Scores 52%
+	 * @param A
+	 * @return
+	 */
 	public int mySolution(int[] A) {
 		// Empty array.
 		if (A.length == 0) {
