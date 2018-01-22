@@ -5,7 +5,7 @@ module.exports = function () {
 
   /**
    * Time complexity: O(n log n)
-   * Space complexity: O(n) - the result array.
+   * Space complexity: O(m) - the result array.
    *
    * @param {Array} arr source where to find the pairs.
    * @param {Number} sum that pairs should satisfy.
@@ -44,8 +44,7 @@ module.exports = function () {
 
   /**
    * Time complexity: O(n)
-   * Space complexity: O(n) - the result array and the complement array.
-   * So i
+   * Space complexity: O(n) - the result array and the complement array O(n/2).
    *
    * @param {Array} arr source where to find the pairs. (unsorted)
    * @param {Number} sum that pairs should satisfy.

@@ -1,6 +1,8 @@
 package edu.fdiazaguirre.interviews;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 
@@ -23,10 +25,16 @@ public class DemoSolution {
 	}
 	
 	private static int[] convertToPrimitive (Integer[] b) {
+
 		int[] a = null;
 		for (int i = 0; i < b.length; i++) {
 		    a[i] = b[i];
 		}
 		return a;
 	}
+	
+	/*public static <E> Set<E> removeDups(Collection<E> c) {
+	    return new LinkedHashSet<E>(c);
+	}*/
+	
 }

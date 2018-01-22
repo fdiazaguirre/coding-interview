@@ -2,6 +2,8 @@ package edu.fdiazaguirre.multithreading;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import net.jcip.annotations.ThreadSafe;
@@ -19,49 +21,51 @@ public class EnsureTheadsSequence {
 		 t2.start();
 		 t3.start();
 
-		// Using SingleThreadExecutor.
-		Executor exec = Executors.newSingleThreadExecutor();
-		// Runnable task1 = new Runnable(){
-		// @Override
-		// public void run() {
-		// System.out.println("t1");
-		// }};
-		// Runnable task2 = new Runnable() {
-		// @Override
-		// public void run() {
-		// System.out.println("t2");
-		// }
-		// };
-		// Runnable task3 = new Runnable(){
-		// @Override
-		// public void run() {
-		// System.out.println("t3");
-		// }
-		// };
+		//System.out.println(Runtime.getRuntime().availableProcessors());
+		// Using SingleThreadExecutor to force execution order.
+		ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		Runnable task1 = new Runnable(){
+			@Override
+			public void run() {
+				System.out.println("task1");
+		}};
+		Runnable task2 = new Runnable() {
+			@Override
+			public void run() {
+			 System.out.println("task2");
+		}
+		};
+		Runnable task3 = new Runnable(){
+			@Override
+			public void run() {
+				System.out.println("task3");
+		 }
+		};
 
-		// The execution order.
-		// exec.execute(task1);
-		// exec.execute(task2);
-		// exec.execute(task3);
-
+		// Cannot guarantee the execution order.
+		es.execute(task1);
+		es.execute(task2);
+		es.execute(task3);
+		es.shutdown();
+		
 		// Using
 		final CountDownLatch latch = new CountDownLatch(3);
 
-		Thread decrementThread1 = new Thread() {
+		Thread decrementThread1 = new Thread("decrementThread1") {
 			@Override
 			public void run() {
 				System.out.println(Thread.currentThread().getName());
 				latch.countDown();
 			}
 		};
-		Thread decrementThread2 = new Thread() {
+		Thread decrementThread2 = new Thread("decrementThread2") {
 			@Override
 			public void run() {
 				System.out.println(Thread.currentThread().getName());
 				latch.countDown();
 			}
 		};
-		Thread decrementThread3 = new Thread() {
+		Thread decrementThread3 = new Thread("decrementThread3") {
 			@Override
 			public void run() {
 				System.out.println(Thread.currentThread().getName());

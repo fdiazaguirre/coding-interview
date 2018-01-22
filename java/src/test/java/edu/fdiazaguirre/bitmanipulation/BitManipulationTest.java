@@ -5,12 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import edu.fdiazaguirre.cracking.BitManipulation;
-import edu.fdiazaguirre.interviews.ListDigits;
 
 public class BitManipulationTest {
 
 	@Test
-	public void test() {
+	public void testRepresentation() {
 		int a = 60; /* 60 = 0011 1100 */
 		int b = 13; /* 13 = 0000 1101 */
 		int c = 0;
@@ -157,5 +156,14 @@ public class BitManipulationTest {
 		System.out.println("Swapped");
 		System.out.println(Integer.toBinaryString(a));
 		System.out.println(Integer.toBinaryString(b));
+	}
+
+	@Test
+	public void testBitGap() {
+		int n1 = 6;// 110_2
+		int n2= 328;//101001000_2
+		BitGap bg = new BitGap();
+		assertEquals(0, bg.solution(n1));
+		assertEquals(2, bg.solution(n2));
 	}
 }

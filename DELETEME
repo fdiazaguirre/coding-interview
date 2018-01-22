@@ -1,0 +1,12 @@
+git add java/src/main/java/edu/fdiazaguirre/amazon/
+git add java/src/main/java/edu/fdiazaguirre/hackerrank/
+git add java/src/main/java/edu/fdiazaguirre/interviews/BinaryGap.java
+git add java/src/main/java/edu/fdiazaguirre/interviews/Crossover.java
+git add java/src/main/java/edu/fdiazaguirre/interviews/CyclicRotation.java
+git add java/src/main/java/edu/fdiazaguirre/interviews/OddOccurrencesInArray.java
+git add java/src/main/java/edu/fdiazaguirre/interviews/Toptal2.java
+git add java/src/main/java/edu/fdiazaguirre/interviews/Toptal3.java
+git add java/src/test/java/edu/fdiazaguirre/interviews/Belatrix.java
+git add java/src/test/java/edu/fdiazaguirre/interviews/CyclicrotationTest.java
+git add java/src/test/java/edu/fdiazaguirre/interviews/Toptal2Test.java
+git add java/src/test/java/edu/fdiazaguirre/interviews/Toptal3Test.java

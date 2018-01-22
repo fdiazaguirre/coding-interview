@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      function registerHandlers() {
+        var as = document.getElementsByTagName('a');
+
+        for (var i = 0; i < as.length; i++) {
+          as[i].onclick = function(i) {
+            alert(i);
+            return false;
+          }.bind(this, i);
+        }
+      }
+      window.onload = registerHandlers;
+    </script>
+    In my life, I used the following web search engines:<br/>
+    <a href="//www.yahoo.com">Yahoo!</a><br/>
+    <a href="//www.altavista.com">AltaVista</a><br/>
+    <a href="//www.google.com">Google</a><br/>
+</body>
+</html>

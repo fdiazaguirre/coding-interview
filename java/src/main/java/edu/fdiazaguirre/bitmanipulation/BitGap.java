@@ -33,12 +33,77 @@ package edu.fdiazaguirre.bitmanipulation;
 public class BitGap {
 
 	public int solution(int n) {
-		// fail fast
+		// write your code in Java SE 8
 		int bitCount = Integer.bitCount(n);
-		if (bitCount == 0) { return 0;}
-		int result = 0;
-		int comp = bitCount - 1;
+		// fail fast
+		if (bitCount == 0) {
+			return 0;
+		}
+		String binRe = Integer.toBinaryString(n);
+		char[] arr = binRe.toCharArray();
+		int max = 0, partial = 0;
 
-		return result;
+		int left = 0, right = 1;
+		while (right < arr.length) {
+			while (arr[right] == '0') {
+				right++;
+				if (right == arr.length - 1) {
+					break;
+				}
+			}
+			// Maybe found a 1 at right
+			if (arr[right] == '1') {
+			    partial = right - left - 1;
+			    if (partial > max) {
+					max = partial;
+				}	
+			}	
+			left = right;
+			right = left + 1;
+			if (right == arr.length - 1) {
+				break;
+			}
+		}
+
+		return max;
 	}
+	
+//	public int solution(int[] A) {
+//        // write your code in Java SE 8
+//        Arrays.sort(A);
+//        int result = 0;
+//        for (int i = 0; i < A.length; i++) {
+//             //corner cases i == 0 && i == A.length -1
+//            if ((i == 0) && (A[i] != A[i+1])) {
+//                result = A[0];    
+//            }
+//            if ((i == A.length -1) && (A[i-1] != A[i])) {
+//                result = A[A.length -1];
+//            }
+//            
+//            if ((i > 0 && i < A.length -1) && (A[i] != A[i+1]) && (A[i-1] != A[i])) {
+//                result = A[i];
+//            } 
+//           
+//            
+//        }
+//        return result;
+//    }
+//	public int[] solution(int[] A, int K) {
+//        int[] input = A;
+//        int[] result = new int[A.length];
+//        while (K > 0) {
+//           // Rotate
+//            for(int i = 0; i < input.length - 1; i++){
+//                result[i+1] = input[i]; 
+//            }
+//            result[0] = input[input.length - 1];
+//            input = result;
+//            result = new int[input.length];
+//            K--;
+//        }
+//        return input;
+//    }
+	
+	
 }

@@ -3,26 +3,26 @@ package edu.fdiazaguirre.interviews;
 public class CyclicRotation {
 
 	
-	public static int[] solution(int[] A, int K) {
-        K = K % A.length;
+	public static Integer[] solution(Integer[] arg, int K) {
+        K = K % arg.length;
         if (K == 0) {
-			return A;
+			return arg;
 		}
 		int i = 0;
-		while (i < A.length) {
-			int v = A[0], pos = i+K -1;
-			if (pos >= A.length) {
-			    pos = pos - A.length;
+		while (i < arg.length) {
+			int v = arg[0], pos = i+K -1;
+			if (pos >= arg.length) {
+			    pos = pos - arg.length;
 			}
 			System.out.println(pos);
-			A[0] = A[pos]; 
-			A[pos] = v;
+			arg[0] = arg[pos]; 
+			arg[pos] = v;
 			i++;
 		}
-		if ( i == A.length - 1) {
-		 A[0] = A[i];
+		if ( i == arg.length - 1) {
+		 arg[0] = arg[i];
 		}
 		
-		return A;
+		return arg;
     }
 }
