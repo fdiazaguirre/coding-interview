@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 const path = require('path'),
       chai = require('chai'),
       expect = chai.expect,

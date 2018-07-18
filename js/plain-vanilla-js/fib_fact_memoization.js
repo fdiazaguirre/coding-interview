@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function () {
+module.exports = () => {
   var Series = {};
 
-  Series.fibonacci = function (n) {
+  Series.fibonacci = (n) => {
     var memo = [0,1,1];
 
     // Fail fast
@@ -19,7 +19,7 @@ module.exports = function () {
     return memo[n];
   };
 
-  Series.factorial = function (n) {
+  Series.factorial = (n) => {
     var memo = [1,1,2];
 
     // Fail fast
