@@ -36,5 +36,5 @@ function taskA (input) {
 }
 
 function taskAsync (input, cb) {
-  return cb(foo(input,cb) / bar(input, 0, cb));
+  return cb(foo(input) / bar(input, 0));
 }
