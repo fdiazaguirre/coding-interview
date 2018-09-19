@@ -6,17 +6,17 @@ module.exports = () => {
   /**
    * O(n)
    */
-  Series.fibonacciLoop = (n) => {
-    let result = 0, temp, offset = 1, num = n;
+  Series.fibonacciLoop = (num) => {
+    let a = 1, b = 0, temp;
 
-    while (num > 0) {
-      temp = offset;
-      offset = offset + result;
-      result = temp;
+    while (num >= 0){
+      temp = a;
+      a = a + b;
+      b = temp;
       num--;
     }
 
-    return result;
+    return b;
   };
 
   /**
